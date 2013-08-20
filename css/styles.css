@@ -1,0 +1,65 @@
+body{
+    padding-top: 40px;
+}
+.album{
+    list-style: none;
+    position: relative;
+    margin-bottom: 12px;
+    float: left;
+    margin-right: 5px;
+    
+}
+.album img{
+    height:166px;
+    width: 300px;
+}
+.titleMask{
+ position: absolute;
+width: 300px;
+z-index: 100;
+background-color: gray;
+height: 50px;
+bottom: 0px;
+opacity: 0.8;
+}
+.titleMask span{
+    text-overflow : ellipsis;
+        white-space   : nowrap;
+        width         : 300px;
+        overflow      : hidden;
+}
+.titleMask h3{
+text-overflow: ellipsis;
+overflow: hidden;
+}
+
+#myModal{
+   display: none;
+}
+#myModal .titleMask{
+    width: 600px;
+}
+#myModal .titleMask span{
+    text-overflow : ellipsis;
+        white-space   : nowrap;
+        width         : 600px;
+        overflow      : hidden;
+}
+#myModal .album img{
+    height:400px;
+    width: 600px;
+}
+#myModal{
+    width: 700px;
+    
+}
+.modal-body{
+     height: 650px;
+}
+.modal-count{
+    margin-left: 400px;
+}
+
+.pointer{
+    cursor: pointer;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <link href="css/reset.css" type="text/css" rel="stylesheet">
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
+</head>
+<body class="container">
+<ul data-bind="foreach:albums">
+    <li class="album pointer" >
+     <a data-toggle="modal" data-target="#myModal" data-bind="click:$root.showGallery"><img data-bind="attr:{'src':coverPhoto}"/></a>
+      <div class="titleMask" data-target="#myModal" data-bind="click:$root.showGallery">
+      <h3><span class="title" data-bind="text:name"> <span data-bind="text:count"></span></span></h3>
+      </div>
+    </li>
+</ul>
+<!-- modal -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" >&times;</button>
+                <h4 class="modal-title" data-bind="text:galTitle"></h4>
+                <h4 class="modal-count">Total Count : <span data-bind="text:galCount"/></h4>
+            </div>
+            <div class="modal-body" >
+               <ul  data-bind="foreach:$root.gallery">
+    <li class="album">
+     <a data-toggle="modal"><img data-bind="attr:{'src':picureUri}"/></a>
+      <div class="titleMask">
+      <h3><span class="title" data-bind="text:title"></span></h3>
+
+
+      </div>
+    </li>
+</ul>
+              </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-default" data-dismiss="modal" data-bind="click:$root.cancelEdit">Close</button>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<script src="data/AlbumData.js"></script>
+<script src="data/photoData.js"></script>
+<script src="js/jquery-1.10.0.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/knockout-2.2.1.debug.js"></script>
+<script src="model/photoModel.js"></script>
+<script src="model/albumModel.js"></script>
+<script src="model/controller.js"></script>
+
+</body>
+
+</html>
